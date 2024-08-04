@@ -21,30 +21,31 @@
 /*!Home Page  */
 /** body  */
 body {
-    background-color: #E1E9FB;
+    background-color: #e1e9fb;
 }
 /* Container */
 .container {
-    width: 80%;
+    width: 70%;
     height: 100dvh;
     margin: 0 auto;
     margin-top: 40px;
 }
 /** Header */
 header {
-    width: 80%;
-    height: 6dvh;
+    width: 70%;
+    height: 8dvh;
     background: rgba(253, 253, 253, 0.9);
     border: none;
     border-radius: 20px;
     position: fixed;
     top: 40px;
     z-index: 10;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-header *{
-    color:#1D1D1F;
+header * {
+    color: #1d1d1f;
 }
 .header_navbar {
     width: 80%;
@@ -60,27 +61,32 @@ header *{
     gap: 25px;
 }
 /* animasiya */
-.header_navbar_menu a{
+.header_navbar_menu a {
+    transition: all 0.3s ease-in-out;
     position: relative;
 }
-.header_navbar_menu a:hover{
+.header_navbar_menu a:hover {
     opacity: 0.9;
+    color: #0d6efd;
 }
-.header_navbar_menu a:hover::after{
+.header_navbar_menu a.active {
+    color: #0d6efd;
+}
+.header_navbar_menu a:hover::after {
     width: 100%;
 }
-.header_navbar_menu a::after{
+.header_navbar_menu a::after {
     transition: all 0.3s ease-in-out;
-    content:'';
+    content: "";
     height: 3px;
     position: absolute;
     width: 0;
-    background-color:#0D6EFD ;
+    background-color: #0d6efd;
     bottom: -4px;
     left: 0;
 }
 
-.header_navbar_login_btn{
+.header_navbar_login_btn {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -88,12 +94,12 @@ header *{
     cursor: pointer;
 }
 /** Main  */
-main{
+main {
     margin-top: 160px;
     width: 100%;
 }
 /* About */
-#about{
+#about {
     width: 100%;
     height: 80dvh;
     display: flex;
@@ -101,103 +107,276 @@ main{
     flex-direction: column;
     justify-content: space-between;
 }
-.main_about_article{
+.main_about_article {
     display: flex;
     flex-direction: column;
     height: 30dvh;
     width: 75%;
     gap: 10px;
 }
-.main_about_article h1{
+.main_about_article h1 {
     font-size: 3rem;
     font-weight: 600;
     color: #020202;
     width: 80%;
 }
-.main_about_article p{
+.main_about_article p {
     margin-top: 10px;
     font-size: 1.5rem;
-    color: #4B5563;
+    color: #4b5563;
 }
-.section_btn_blue{
-    width: max-content;
-    background: #0D6EFD;
-    border: 1px solid #0D6EFD;
+.btn_primary {
+    width: fit-content;
+    background: #0d6efd;
+    border: 1px solid #0d6efd;
     border-radius: 5px;
     padding: 8px 16px;
     cursor: pointer;
     font-size: 1.2rem;
     color: #ffffff;
 }
-.achievements{
-    display: grid;
-    gap:150px;
-    grid-template-columns: repeat(3,1fr);
+.btn_outline {
+    width: fit-content;
+    background: #ffffff;
+    border: 2px solid #0d6efd;
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #0d6efd;
 }
-.achievement{
+.btn_primary:active,
+.btn_outline:active {
+    scale: 0.98;
+}
+.achievements {
+    display: flex;
+    justify-content: space-between;
+}
+.achievement {
     width: 290px;
     height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.4);
-    /* border:2px rgba(255, 255, 255, 0.56) solid ; */
-    border-radius: 16px;
     padding: 26px;
+}
+.white_box {
+    border: 2px rgba(255, 255, 255, 0.56) solid;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
     backdrop-filter: blur(10px);
 }
-.achievement h1{
-    color:#111827;
+.achievement h1 {
+    color: #111827;
     font-size: 3.5rem;
     font-weight: 700;
     height: min-content;
     width: min-content;
 }
-.achievement p{
-    color:#4B5563;
+.achievement p {
+    color: #4b5563;
     font-size: 1.25rem;
     height: min-content;
     width: max-content;
 }
-.designed_oval{
-    height: 350px;
-    width: 1400px;
-    background: linear-gradient(45deg,#6EBDF9 100%,#BCECFC 56%);
-    filter:blur(200px);
-    top: 430px;
-    transform: rotate(-8deg);
-    border:none;
-    border-radius:90% ;
-    bottom:0;
+.designed_oval {
+    background: linear-gradient(45deg, #6ebdf9 100%, #bcecfc 56%);
+    filter: blur(200px);
+    top: 770px;
+    width: 100%;
+    border: none;
+    bottom: 0;
+    left: -300px;
+    right: 0;
     margin: auto;
     position: absolute;
+    z-index: -1;
+}
+.dnk__design {
+    position: absolute;
+    height: 400px;
+    right: 0;
+    top: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    /* user-drag: none; */
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    z-index: -1;
+}
+.dnk__design img {
+    height: 2000px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: -1;
 }
 /* Doctors */
-#doctors{
+#doctors {
     display: flex;
     margin-top: 120px;
     flex-direction: column;
-    height: 40dvh;
+    height: 60dvh;
     justify-content: space-between;
     align-items: center;
 }
-.section_heading{
+.section_heading {
     font-size: 40px;
+    width: min-content;
     font-weight: 700;
-    color: #18191F;
+    color: #18191f;
     position: relative;
 }
-.section_heading::after{
-    content:'';
+.section_heading::after {
+    content: "";
     width: 100%;
     position: absolute;
-    bottom:-6px;
+    bottom: -6px;
     left: 0;
     height: 3px;
     border-radius: 10px;
-    background: #0D6EFD;
+    background: #0d6efd;
+}
+
+.person {
+    width: 270px;
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 10px;
+    margin: 0 auto;
+}
+.doctor_profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.doctor_profile h1 {
+    font-size: 1rem;
+}
+.doctor_profile img {
+    width: 78px;
+    height: 78px;
+}
+.person p {
+    font-size: 1rem;
+    width: 218px;
+    color: #4b5563;
+}
+.person button {
+    width: min-content;
+}
+.doctors_people {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: auto;
 }
 /* Comments */
+#testimonials {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 120px 0;
+    gap: 40px;
+}
+/* .comments__container__testimonials{ 
+    width: 50%;
+    margin: 80px auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.comments__container p{
+    font-size: 1.321rem;
+}
+.comments__container svg{
+    position: absolute;
+    left:-50px;
+    top: -40px;
+} */
+
+.testi__content__slide {
+    position: relative;
+}
+.testi__content {
+    padding: 40px 0;
+    position: relative;
+    height: 70dvh;
+    width: 100%;
+    overflow: hidden;
+}
+.mySwiper nav img.left {
+    rotate: 180deg;
+}
+.mySwiper nav img {
+    cursor: pointer;
+}
+.mySwiper nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+.testi__content__slide__profile {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    margin-top: 26px;
+    margin-left: 50px;
+}
+.testi__content__slide__profile__details {
+    display: flex;
+    flex-direction: column;
+}
+.testi__content__slide__profile__details .name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0d6efd;
+    line-height: 1.75rem;
+}
+
+.testi__content__slide__profile__details .job {
+    font-size: 1.125rem;
+    color: #18191f;
+    line-height: 1.7rem;
+}
+
+.testi__content__slide > svg {
+    position: absolute;
+    top: -30px;
+}
+
+.testi__content__slide p {
+    font-size: 1.234rem;
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 650px;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* Blog */
 /* FAQ (Frequently Asked Question */
 /* Footer */
