@@ -181,6 +181,7 @@ main {
     height: min-content;
     width: max-content;
 }
+/* Body design */
 .designed_oval {
     background: linear-gradient(45deg, #6ebdf9 100%, #bcecfc 56%);
     filter: blur(200px);
@@ -218,6 +219,44 @@ main {
     user-select: none;
     z-index: -1;
 }
+.designed_oval-2{
+    background: linear-gradient( -45deg,#D187FF, #BCECFC8F);
+    filter: blur(100px);
+    width: 100%;
+    border: none;
+    position: absolute;
+    z-index: -1;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -ms-user-select: none;
+    bottom:0;
+    transform: translateY(calc(200dvh + 200px));
+    height: 80dvh;
+    overflow: hidden;
+}
+
+.wave-design{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    top: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    /* user-drag: none; */
+    -webkit-user-drag: none;
+    -ms-user-select: none;
+    transform: translateY(calc(200dvh + 150px));
+    z-index: -1;
+    margin: auto;
+}
 /* Doctors */
 #doctors {
     display: flex;
@@ -227,9 +266,10 @@ main {
     justify-content: space-between;
     align-items: center;
 }
+/*Section heading  */
 .section_heading {
     font-size: 40px;
-    width: min-content;
+    width: fit-content;
     font-weight: 700;
     color: #18191f;
     position: relative;
@@ -254,7 +294,6 @@ main {
     justify-content: space-between;
     padding: 30px;
     gap: 10px;
-    margin: 0 auto;
 }
 .doctor_profile {
     display: flex;
@@ -279,10 +318,10 @@ main {
 }
 .doctors_people {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     justify-content: space-between;
-    align-items: center;
-    gap: auto;
+
 }
 /* Comments */
 #testimonials {
@@ -293,21 +332,6 @@ main {
     margin: 120px 0;
     gap: 40px;
 }
-/* .comments__container__testimonials{ 
-    width: 50%;
-    margin: 80px auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-.comments__container p{
-    font-size: 1.321rem;
-}
-.comments__container svg{
-    position: absolute;
-    left:-50px;
-    top: -40px;
-} */
 
 .testi__content__slide {
     position: relative;
@@ -370,6 +394,7 @@ main {
     margin-left: 50px;
     margin-top: 30px;
     width: 650px;
+
 }
 
 .swiper-slide {
@@ -377,8 +402,60 @@ main {
     align-items: center;
     justify-content: center;
 }
+
 /* Blog */
+#blog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 120px;
+}
+.blog_diseases{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: space-between;
+    grid-auto-flow: row;
+
+}
+.blog_diseases img{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    width: 100%;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    -webkit-user-drag: none;
+    user-select: none;
+    -ms-user-select: none;
+}
+.blog_diseases_box{
+    width: fit-content;
+    border: none;
+}
+.blog_diseases_box_description{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+}
+.blog_diseases_box_description p{
+    font-size: 1rem;
+}
+.blog_diseases_box_description h1{
+    font-weight: 500;
+    font-size: 1.25rem;
+}
 /* FAQ (Frequently Asked Question */
+#faq{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
 /* Footer */
 
 /*  */
