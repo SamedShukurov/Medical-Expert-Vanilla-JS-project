@@ -36,6 +36,9 @@ header {
     height: 8dvh;
     background: rgba(253, 253, 253, 0.9);
     border: none;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     border-radius: 20px;
     position: fixed;
     top: 40px;
@@ -435,6 +438,7 @@ main {
 .blog_diseases_box{
     width: fit-content;
     border: none;
+    cursor: pointer;
 }
 .blog_diseases_box_description{
     display: flex;
