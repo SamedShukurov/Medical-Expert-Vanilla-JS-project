@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- !Font Awasome -->
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
+        />
+        <link rel="stylesheet" href="src/login.css" />
+
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <form class="main-container white_box">
+                <h3>
+                    Sistemə daxil olmaq üçün Digital Login-dən istifadə
+                    edirsiniz
+                </h3>
+                <div class="form-group">
+                    <label>İdentifikasiya nömrəsi</label>
+                    <input type="text" placeholder="XXXXXXX" />
+                </div>
+                <div class="form-group">
+                    <label>Şifrə</label>
+                    <div class="form-group_input-box">
+                        <i class="fa-regular fa-eye-slash"></i>
+                        <input type="password" placeholder="***" />
+                    </div>
+                </div>
+                <div class="form-group-pass-change">
+                    <div>
+                        <div class="form-group-pass-change_checkbox white_box">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span>Məni xatırla</span>
+                    </div>
+                    <a href="#">Şifrəni unutmuşam</a>
+                </div>
+                <div class="form-group-btns">
+                    <button class="btn_primary">Daxil ol</button>
+                    <a href="signup.html" class="btn_outline">Qeydiyyatdan keç</a>
+                </div>
+            </form>
+            <ul class="main-footer">
+                <li><a href="contact.html"> Əlaqə </a></li>
+                <li><a href="#"> Şərtlər və qaydalar </a></li>
+                <li><a href="index.html#faq"> Tez-tez verilən suallar </a></li>
+            </ul>
+        </main>
+        <script>
+            const checkBox=document.querySelector('.form-group-pass-change_checkbox')
+            const eyeBtn = document.querySelector(".fa-eye-slash")
+            const inputBox = document.querySelector(".form-group_input-box > input")
+            checkBox.addEventListener('click',()=>{
+                checkBox.classList.toggle("active")
+            })
+            eyeBtn.addEventListener("click",()=>{
+                if(eyeBtn.classList.contains("fa-eye-slash")){
+                    inputBox.type = "text"
+                    eyeBtn.classList.replace("fa-eye-slash","fa-eye")
+                }
+                else{
+                    inputBox.type = "password"
+                    eyeBtn.classList.replace("fa-eye","fa-eye-slash")
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -17,7 +17,9 @@
     
 
 } */
-
+html{
+    scroll-behavior: smooth;
+}
 /*!Home Page  */
 /** body  */
 body {
@@ -265,7 +267,7 @@ main {
     display: flex;
     margin-top: 120px;
     flex-direction: column;
-    height: 60dvh;
+    min-height: 60dvh;
     justify-content: space-between;
     align-items: center;
 }
@@ -297,6 +299,7 @@ main {
     justify-content: space-between;
     padding: 30px;
     gap: 10px;
+    margin: auto;
 }
 .doctor_profile {
     display: flex;
@@ -321,14 +324,16 @@ main {
 }
 .doctors_people {
     width: 100%;
+    margin-top: 20px;
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
     justify-content: space-between;
-
+    gap: 20px 0;
+    align-items: center;
 }
 /* Comments */
 #testimonials {
-    height: 70vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -417,11 +422,9 @@ main {
 .blog_diseases{
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(580px,1fr));
     gap: 20px;
     justify-content: space-between;
-    grid-auto-flow: row;
-
 }
 .blog_diseases img{
     -moz-user-select: none;

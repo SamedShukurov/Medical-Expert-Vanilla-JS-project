@@ -13,6 +13,7 @@
 }
 body {
     background: #e1e9fb;
+    min-height: 100dvh;
 }
 /*! Header */
 header {
@@ -243,6 +244,7 @@ main {
     justify-content: space-between;
     padding: 30px;
     gap: 10px;
+    margin: auto;
 }
 .doctor_profile {
     display: flex;

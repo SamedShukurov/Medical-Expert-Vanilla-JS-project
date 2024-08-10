@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- !Font Awasome -->
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
+        />
+        <link rel="stylesheet" href="src/signup-pass.css" />
+
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <form class="main-container white_box">
+                <a href="signup.html" class="previos-btn">
+                    <img src="src/assets/svg/right-arrow-icon.svg" alt="left">
+                    Geri
+                </a>
+                <h3>Qeydiyyat</h3>
+                <div class="form-group">
+                    <label>Şifrə</label>
+                    <div class="form-group_input-box">
+                        <i class="fa-regular fa-eye-slash"></i>
+                        <input type="password" placeholder="***" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Şifrə</label>
+                    <div class="form-group_input-box">
+                        <i class="fa-regular fa-eye-slash"></i>
+                        <input type="password" placeholder="***" />
+                    </div>
+                </div>
+                <div class="form-group-btns">
+                    <a href="signup-success.html" class="btn_primary">İrəli</a>
+                </div>
+            </form>
+            <ul class="main-footer">
+                <li><a href="contact.html"> Əlaqə </a></li>
+                <li><a href="#"> Şərtlər və qaydalar </a></li>
+                <li><a href="index.html#faq"> Tez-tez verilən suallar </a></li>
+            </ul>
+        </main>
+        <script>
+            const eyeBtnParent = document.querySelectorAll(
+                ".form-group_input-box"
+            );
+
+            eyeBtnParent.forEach((parent) =>
+                parent.addEventListener("click", (e) => {
+                    if(e.target.tagName=="I"){
+                        let eyeBtn = parent.children[0];
+                        let inputBox = parent.children[1]
+                        if (eyeBtn.classList.contains("fa-eye-slash")) {
+                            eyeBtn.classList.replace("fa-eye-slash", "fa-eye");
+                            inputBox.type="text"
+                        } else {
+                            eyeBtn.classList.replace("fa-eye", "fa-eye-slash");
+                            inputBox.type="password"  
+                        }
+                        
+                    }
+                }
+            ));
+        </script>
+    </body>
+</html>
