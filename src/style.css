@@ -662,7 +662,18 @@ footer > span{
         margin-inline:auto;
     }
 }
+
 @media (max-width:935px){
+    @keyframes fadeBottom {
+        from{
+            opacity: 0;
+            transform: translateY(0);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(9dvh);
+        }
+    }
     footer{
         padding: 50px 0;
         gap: 20px;
@@ -712,6 +723,7 @@ footer > span{
         position: absolute;
         top: 0;
         transform: translateY(9dvh);
+        animation: fadeBottom 400ms  ease;
         left: 0;
         align-items: center;
         flex-direction: column;
@@ -773,14 +785,15 @@ footer > span{
     .section_heading{
         font-size: 1.25rem;
     }
+    main,header{
+        padding: 0 5px;
+    }
 }
 @media (max-width:350px){
     :root{
         --website-responsive-size:300px;
     }
-    main{
-        padding: 0 5px;
-    }
+
 
     .testi__content__slide p{
         font-size: 0.8rem;
