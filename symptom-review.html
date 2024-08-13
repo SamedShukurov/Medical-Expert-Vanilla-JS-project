@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- !Font Awasome -->
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
+        />
+        <link rel="stylesheet" href="src/symptom-review.css" />
+
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <form class="main-container white_box">
+                <a href="index.html" class="previos-btn">
+                    <img src="src/assets/svg/right-arrow-icon.svg" alt="left">
+                    Geri
+                </a>
+                <h3>
+                    Diaqnozu öyrənmək üçün xəstəlik simptolarınızı daxil edin
+                </h3>
+                <select class="symptom-select">
+                    <option>Asqıraq</option>
+                    <option>Burun tutulması</option>
+                    <option>Burun axması</option>
+                    <option>Boğaz ağrısı</option>
+                    <option>Baş ağrısı</option>
+                    <option>Ağ bəlğəmli öskürək</option>
+                    <option>Nəfəs darlığı</option>
+                </select>
+                <div class="form-group-btns">
+                    <a href="signup-pass.html" class="btn_primary">İrəli</a>
+                </div>
+            </form>
+            <ul class="main-footer">
+                <li><a href="contact.html"> Əlaqə </a></li>
+                <li><a href="#"> Şərtlər və qaydalar </a></li>
+                <li><a href="index.html#faq"> Tez-tez verilən suallar </a></li>
+            </ul>
+        </main>
+        <script>
+            const checkBox=document.querySelector('.form-group-pass-change_checkbox')
+            const eyeBtn = document.querySelector(".fa-eye-slash")
+            const inputBox = document.querySelector(".form-group_input-box > input")
+            checkBox.addEventListener('click',()=>{
+                checkBox.classList.toggle("active")
+            })
+            eyeBtn.addEventListener("click",()=>{
+                if(eyeBtn.classList.contains("fa-eye-slash")){
+                    inputBox.type = "text"
+                    eyeBtn.classList.replace("fa-eye-slash","fa-eye")
+                }
+                else{
+                    inputBox.type = "password"
+                    eyeBtn.classList.replace("fa-eye","fa-eye-slash")
+                }
+            })
+        </script>
+    </body>
+</html>

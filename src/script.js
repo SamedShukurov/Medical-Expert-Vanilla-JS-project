@@ -1,5 +1,7 @@
 const faqs = document.querySelectorAll(".faq-content-questions .accordion");
 
+
+
 faqs.forEach(faq=>{
     faq.addEventListener("click",()=>{
         faq.classList.toggle("active")
@@ -28,3 +30,22 @@ var swiper = new Swiper(".mySwiper", {
         prevEl: ".swiper-button-prev-custom",
     },
 });
+
+// Burger menu
+const burgerMenu = document.querySelector(".fa-bars")
+const burgerMenuCloseBtn = document.querySelector(".fa-circle-xmark")
+const navigationMenu=document.querySelector(".header_navbar_menu")
+burgerMenu.addEventListener("click",()=>{
+    if(!navigationMenu.classList.contains("active")){
+        
+        navigationMenu.classList.add("active")
+        burgerMenu.style.display="none"
+    }
+})
+burgerMenuCloseBtn.addEventListener("click",()=>{
+    if(navigationMenu.classList.contains("active")){
+        navigationMenu.classList.remove("active")
+        burgerMenu.style.display="block"
+    }
+})
+

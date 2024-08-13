@@ -12,29 +12,38 @@
     font-style: normal;
 }
 /*! Root  */
-/* :root{
-    --home-bg-color:#e1e9fb;
+:root{
+    --website-responsive-size:1200px;
     
 
-} */
+}
+img{
+    display: block;
+    width: 100%;
+}
 html{
     scroll-behavior: smooth;
+    width: 100%;
 }
 /*!Home Page  */
 /** body  */
 body {
     background-color: #e1e9fb;
+    width: 100%;
 }
 /* Container */
 .container {
-    width: 70%;
     height: 100%;
     margin: 0 auto;
+    align-items: center;
     margin-top: 40px;
+}
+main,header{
+    max-width: var(--website-responsive-size);
+    margin: 0 auto;
 }
 /** Header */
 header {
-    width: 70%;
     height: 8dvh;
     background: rgba(253, 253, 253, 0.9);
     border: none;
@@ -66,6 +75,12 @@ header * {
     gap: 25px;
 }
 /* animasiya */
+.header_navbar div{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+}
 .header_navbar_menu a {
     transition: all 0.3s ease-in-out;
     position: relative;
@@ -98,16 +113,22 @@ header * {
     width: max-content;
     cursor: pointer;
 }
+.fa-bars{
+    color:black; 
+    cursor: pointer;
+    display: none;
+    font-size: 2rem;
+}
+
 /** Main  */
 main {
     margin-top: 160px;
-    width: 100%;
 }
 /* About */
 #about {
-    width: 100%;
-    height: 80dvh;
+    min-height: 80dvh;
     display: flex;
+    gap: 30px;
     position: relative;
     flex-direction: column;
     justify-content: space-between;
@@ -115,8 +136,8 @@ main {
 .main_about_article {
     display: flex;
     flex-direction: column;
-    height: 30dvh;
-    width: 75%;
+    min-height: 30dvh;
+    width: 100%;
     gap: 10px;
 }
 .main_about_article h1 {
@@ -157,12 +178,17 @@ main {
 }
 .achievements {
     display: flex;
+    min-height: fit-content;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 .achievement {
     width: 290px;
     height: 150px;
     display: flex;
+    margin: auto;
     flex-direction: column;
     justify-content: space-between;
     padding: 26px;
@@ -273,7 +299,7 @@ main {
 }
 /*Section heading  */
 .section_heading {
-    font-size: 40px;
+    font-size: 2.5rem;
     width: fit-content;
     font-weight: 700;
     color: #18191f;
@@ -299,7 +325,6 @@ main {
     justify-content: space-between;
     padding: 30px;
     gap: 10px;
-    margin: auto;
 }
 .doctor_profile {
     display: flex;
@@ -324,7 +349,7 @@ main {
 }
 .doctors_people {
     width: 100%;
-    margin-top: 20px;
+    margin: 20px 0;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
     justify-content: space-between;
@@ -347,7 +372,7 @@ main {
 .testi__content {
     padding: 40px 0;
     position: relative;
-    height: 70dvh;
+    min-height: 70dvh;
     width: 100%;
     overflow: hidden;
 }
@@ -397,20 +422,27 @@ main {
     top: -30px;
 }
 
+.testi__content__slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .testi__content__slide p {
     font-size: 1.234rem;
-    margin-left: 50px;
-    margin-top: 30px;
-    width: 650px;
-
+    max-width: 500px;
+    margin-left: 20px;
 }
-
 .swiper-slide {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
+.swiper-button-prev-custom{
+    width: fit-content;
+}
+.swiper-button-next-custom{
+    width: fit-content;
+}
 /* Blog */
 #blog{
     display: flex;
@@ -422,7 +454,7 @@ main {
 .blog_diseases{
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(580px,1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     justify-content: space-between;
 }
@@ -439,15 +471,15 @@ main {
     -ms-user-select: none;
 }
 .blog_diseases_box{
-    width: fit-content;
+    max-width: 573px;
     border: none;
     cursor: pointer;
+    margin: auto;
 }
 .blog_diseases_box_description{
     display: flex;
     flex-direction: column;
     padding: 16px;
-
 }
 .blog_diseases_box_description p{
     font-size: 1rem;
@@ -479,6 +511,7 @@ main {
 .accordion div{
     display: flex;
     cursor: pointer;
+    align-items: center;
     justify-content: space-between;
 }
 .accordion div img{
@@ -490,7 +523,7 @@ main {
     width: 90%;
     opacity: 0;
     transition: all 0.2s ease;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 .accordion.active{
     border-bottom: 1px solid #0d6efd ;
@@ -500,12 +533,10 @@ main {
 }
 .accordion.active h1{
     color: #0d6efd;
-
 }
 .accordion.active p{
     opacity: 1;
     height: fit-content;
-
 }
 .accordion div i{
     font-size: 1rem;
@@ -518,33 +549,30 @@ main {
 }
 /* Footer */
 footer{
-    width: 100%;
-    height: 40dvh;
+    min-height: 40dvh;
     background: #16191C;
     display: flex;
     flex-direction: column;
-    align-items:center;
-    justify-content: space-around;
-    padding: 0 60px;
+    align-items: center;
+    justify-content:space-around;
 }
 footer h1,a{
     font-size: 1rem;
 }
 footer > span{
+    width: fit-content;
     color: #CBDADA;
+    height: fit-content;
 }
 .footer-content{
-    width: 70%;
-    margin: 0 auto;
-    height: 100%;
+    min-width: var(--website-responsive-size);
     display: flex;
     justify-content: space-between;
-    height: fit-content;
+    gap: 10px;
 }
 .footer_nav{   
-    width: 50%;
     display: flex;
-    height: fit-content;
+    gap: 20px;
     justify-content: space-between;
 }
 .footer_nav h1{
@@ -565,7 +593,6 @@ footer > span{
 }
 .footer-content div{
     display: flex;
-    width: fit-content;
     gap: 12px;
     flex-direction: column;
 }
@@ -614,3 +641,153 @@ footer > span{
 }
 
 /*  */
+
+
+@media (max-width:1000px){
+    .mySwiper nav{
+        display: none;
+    }
+
+}
+@media (max-width:1235px){
+    :root{
+        --website-responsive-size:900px;
+        
+    
+    }
+    .doctors_people{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .person{
+        margin-inline:auto;
+    }
+}
+@media (max-width:935px){
+    footer{
+        padding: 50px 0;
+        gap: 20px;
+    }
+    .footer-content{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+
+    }
+    .dnk__design{
+        transform: translateY(-150px);
+    }
+    .footer_nav{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    :root{
+        --website-responsive-size:600px;
+    }
+    .section_heading{
+        font-size: 2rem;
+    }
+    .fa-bars{
+        display: block;
+    }
+    .faq-content{
+        padding: 10px;
+    }
+    .faq-content h1{
+        font-size: 1rem;
+    }
+    .header_navbar_menu{
+        display: none;
+        transition: all 1s ease;
+        opacity: 0;
+    }
+    .fa-circle-xmark{
+        color: red;
+        font-size: 2rem;
+    }
+    .header_navbar_menu.active{
+        opacity: 1;
+        display: flex;
+        position: absolute;
+        top: 0;
+        transform: translateY(9dvh);
+        left: 0;
+        align-items: center;
+        flex-direction: column;
+        width: var(--website-responsive-size);
+        height: fit-content;
+        padding: 20px;
+        border: 2px rgba(255, 255, 255, 0.56) solid;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+    }
+
+}@media(max-width:660px){
+    :root{
+        --website-responsive-size:400px;
+    }
+    
+    .testi__content__slide p{
+        font-size: 1rem;
+    }
+    .main_about_article h1{
+        font-size: 2.5rem;
+        width: 100%;
+    }
+    .main_about_article p{
+        font-size: 1rem;
+    }
+    .doctors_people{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .blog_diseases{
+        grid-template-columns: none;
+        grid-template-rows: repeat(4,1fr);
+    }
+    .dnk__design{
+        display: none;
+    }
+}
+@media (max-width:500px){
+
+    .footer-content > div {
+        display: none;
+    }
+    :root{
+        --website-responsive-size:350px;
+    }
+    footer{
+        padding: 10px;
+    }
+    .main_about_article h1{
+        font-size: 1.25rem;
+        width: 100%;
+    }
+    .main_about_article p{
+        font-size: 0.8rem;
+    }
+    .section_heading{
+        font-size: 1.25rem;
+    }
+}
+@media (max-width:350px){
+    :root{
+        --website-responsive-size:300px;
+    }
+    main{
+        padding: 0 5px;
+    }
+
+    .testi__content__slide p{
+        font-size: 0.8rem;
+    }
+    .faq-content h1,.faq-content p {
+        font-size: 0.8rem;
+    }
+
+
+}
