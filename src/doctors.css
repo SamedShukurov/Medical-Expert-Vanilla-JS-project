@@ -15,9 +15,31 @@ body {
     background: #e1e9fb;
     min-height: 100dvh;
 }
+:root{
+    --website-responsive-size:1200px;
+    
+
+}
+.header_navbar div{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+}
+img{
+    display: block;
+    width: 100%;
+}
+main,header,.footer-content{
+    max-width: var(--website-responsive-size);
+    margin: 0 auto;
+}
+.footer-content{
+    
+    gap: 20px;
+}
 /*! Header */
 header {
-    width: 70%;
     height: 8dvh;
     margin: 0 auto;
     left: 0;
@@ -81,47 +103,48 @@ header * {
     width: max-content;
     cursor: pointer;
 }
+.fa-bars{
+    color:black; 
+    cursor: pointer;
+    display: none;
+    font-size: 2rem;
+}
 
 /*! Footer */
-footer {
-    width: 100%;
-    height: 40dvh;
-    background: #16191c;
+footer{
+    min-height: 40dvh;
+    background: #16191C;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: 0 60px;
+    justify-content:space-around;
 }
-footer h1,
-a {
+footer h1,a{
     font-size: 1rem;
 }
-footer > span {
-    color: #cbdada;
-}
-.footer-content {
-    width: 70%;
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
+footer > span{
+    width: fit-content;
+    color: #CBDADA;
     height: fit-content;
 }
-.footer_nav {
-    width: 50%;
+.footer-content{
+    min-width: var(--website-responsive-size);
     display: flex;
-    height: fit-content;
+    justify-content: space-between;
+    gap: 10px;
+}
+.footer_nav{   
+    display: flex;
+    gap: 20px;
     justify-content: space-between;
 }
-.footer_nav h1 {
-    color: #7a7a7a;
+.footer_nav h1{
+    color: #7A7A7A;
 }
-.footer_nav a,
-i {
-    color: #fdfdfd;
+.footer_nav a,i{
+    color: #FDFDFD;
 }
-.footer_nav > li {
+.footer_nav > li{
     height: fit-content;
 }
 .footer_nav > li > ul {
@@ -129,53 +152,53 @@ i {
     gap: 0.5rem;
     flex-direction: column;
     justify-content: space-between;
-    height: fit-content;
+    height:  fit-content;
 }
-.footer-content div {
+.footer-content div{
     display: flex;
-    width: fit-content;
     gap: 12px;
     flex-direction: column;
 }
-.footer-content div h1 {
+.footer-content div h1{
     color: #fff;
 }
-.footer-content div input {
+.footer-content div input{
     width: 100%;
     height: 50px;
     border-radius: 10px;
-    border: 1px solid #0d6efd;
+    border:1px solid #0D6EFD;
     background: none;
-    padding: 13px 30px;
+    padding:  13px 30px;
     font-size: 1rem;
     font-weight: 500;
-    color: #fdfdfd;
-    outline: none;
+    color: #FDFDFD;
+    outline:none;
 }
-.footer-content div div {
+.footer-content div div{
     width: 100%;
     position: relative;
 }
-.footer-content div div .fa-chevron-right {
+.footer-content div div .fa-chevron-right{
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     height: 100%;
     width: 15%;
-    margin: auto;
+    margin: auto ;
     display: flex;
     align-items: center;
     cursor: pointer;
-    color: #0d6efd;
+    color: #0D6EFD;
     font-size: 1rem;
     justify-content: center;
-    border-left: 1px solid #0d6efd;
+    border-left:1px solid #0D6EFD;
+
 }
-.footer-content div div input::placeholder {
+.footer-content div div input::placeholder{
     color: #828080;
 }
-.footer-content div div {
+.footer-content div div{
     border-radius: 10px;
     border: none;
 }
@@ -398,4 +421,146 @@ main {
 /* for IE10 */
 .filter-box select::-ms-expand {
     display: none;
+}
+
+
+@media (max-width:1235px){
+    :root{
+        --website-responsive-size:900px;
+        
+    
+    }
+}
+@media (max-width:800px){
+    .doctors_people{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .person{
+        
+        margin: 0 5px;
+    }
+}
+@media (max-width:500px){
+
+    .footer-content > div {
+        display: none;
+    }
+    :root{
+        --website-responsive-size:350px;
+    }
+    footer{
+        margin-top: 100px;
+        padding: 10px;
+    }
+    main{
+        margin-top: 100px;
+    }
+    .main_about_article h1{
+        font-size: 1.25rem;
+        width: 100%;
+    }
+    .main_about_article p{
+        font-size: 0.8rem;
+    }
+    .section_heading{
+        font-size: 1.25rem;
+    }
+    main,header{
+        padding: 0 5px;
+    }
+}
+
+@media (max-width:935px){
+    @keyframes fadeBottom {
+        from{
+            opacity: 0;
+            transform: translateY(0);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(9dvh);
+        }
+    }
+    footer{
+        padding: 50px 0;
+        gap: 20px;
+    }
+    .footer-content{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+
+    }
+    .dnk__design{
+        transform: translateY(-150px);
+    }
+    .footer_nav{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    :root{
+        --website-responsive-size:600px;
+    }
+    .section_heading{
+        font-size: 2rem;
+    }
+    .fa-bars{
+        display: block;
+    }
+    .faq-content{
+        padding: 10px;
+    }
+    .faq-content h1{
+        font-size: 1rem;
+    }
+    .header_navbar_menu{
+        display: none;
+        transition: all 1s ease;
+        opacity: 0;
+    }
+    .fa-circle-xmark{
+        color: red;
+        font-size: 2rem;
+    }
+    .header_navbar_menu.active{
+        opacity: 1;
+        display: flex;
+        position: absolute;
+        top: 0;
+        transform: translateY(9dvh);
+        animation: fadeBottom 400ms  ease;
+        left: 0;
+        align-items: center;
+        flex-direction: column;
+        width: var(--website-responsive-size);
+        height: fit-content;
+        padding: 20px;
+        border: 2px rgba(255, 255, 255, 0.56) solid;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+    }
+}
+@media(max-width:660px){
+    :root{
+        --website-responsive-size:400px;
+    }
+    .dnk__design{
+        display: none;
+    }
+}
+@media (max-width:400px){
+    :root{
+        --website-responsive-size:300px;
+    }
+}
+@media (max-width:350px){
+    :root{
+        --website-responsive-size:260px;
+    }
 }
