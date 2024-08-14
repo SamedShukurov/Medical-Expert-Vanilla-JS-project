@@ -16,7 +16,6 @@ body{
 }
 /*! Header */
 header {
-    width: 70%;
     height: 8dvh;
     margin: 0 auto;
     left: 0;
@@ -30,9 +29,30 @@ header {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
         rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+.header_navbar div{
+    display: flex;
+    gap: 20px;
+    align-items: center;
 
+}
+img{
+    display: block;
+    width: 100%;
+}
+main{
+    margin-top: 100px;
+}
 header * {
     color: #1d1d1f;
+}
+:root{
+    --website-responsive-size:1200px;
+    
+
+}
+main,header{
+    max-width: var(--website-responsive-size);
+    margin: 0 auto;
 }
 .header_navbar {
     width: 80%;
@@ -80,36 +100,38 @@ header * {
     width: max-content;
     cursor: pointer;
 }
-
+.fa-bars{
+    color:black; 
+    cursor: pointer;
+    display: none;
+    font-size: 2rem;
+}
 /*! Footer */
 footer{
-    width: 100%;
-    height: 40dvh;
+    min-height: 40dvh;
     background: #16191C;
     display: flex;
     flex-direction: column;
-    align-items:center;
-    justify-content: space-around;
-    padding: 0 60px;
+    align-items: center;
+    justify-content:space-around;
 }
 footer h1,a{
     font-size: 1rem;
 }
 footer > span{
+    width: fit-content;
     color: #CBDADA;
+    height: fit-content;
 }
 .footer-content{
-    width: 70%;
-    margin: 0 auto;
-    height: 100%;
+    min-width: var(--website-responsive-size);
     display: flex;
     justify-content: space-between;
-    height: fit-content;
+    gap: 10px;
 }
 .footer_nav{   
-    width: 50%;
     display: flex;
-    height: fit-content;
+    gap: 20px;
     justify-content: space-between;
 }
 .footer_nav h1{
@@ -130,7 +152,6 @@ footer > span{
 }
 .footer-content div{
     display: flex;
-    width: fit-content;
     gap: 12px;
     flex-direction: column;
 }
@@ -178,7 +199,7 @@ footer > span{
     border: none;
 }
 
-/* Blog */
+/*! Blog */
 
 #blog{
     display: flex;
@@ -354,4 +375,137 @@ main{
     transform: translateY(calc(100dvh + 200px));
     z-index: -1;
     margin: auto;
+}
+
+
+@media (max-width:1235px){
+    :root{
+        --website-responsive-size:900px;
+        
+    
+    }
+}
+@media (max-width:500px){
+
+    .footer-content > div {
+        display: none;
+    }
+    :root{
+        --website-responsive-size:350px;
+    }
+    footer{
+        margin-top: 100px;
+        padding: 10px;
+    }
+    .main_about_article h1{
+        font-size: 1.25rem;
+        width: 100%;
+    }
+    .main_about_article p{
+        font-size: 0.8rem;
+    }
+    .section_heading{
+        font-size: 1.25rem;
+    }
+    main,header{
+        padding: 0 5px;
+    }
+}
+
+@media (max-width:935px){
+    @keyframes fadeBottom {
+        from{
+            opacity: 0;
+            transform: translateY(0);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(9dvh);
+        }
+    }
+    .blog_diseases{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    footer{
+        padding: 50px 0;
+        gap: 20px;
+    }
+    .footer-content{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+
+    }
+    .dnk__design{
+        transform: translateY(-150px);
+    }
+    .footer_nav{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    :root{
+        --website-responsive-size:600px;
+    }
+    .section_heading{
+        font-size: 2rem;
+    }
+    .fa-bars{
+        display: block;
+    }
+    .faq-content{
+        padding: 10px;
+    }
+    .faq-content h1{
+        font-size: 1rem;
+    }
+    .header_navbar_menu{
+        display: none;
+        transition: all 1s ease;
+        opacity: 0;
+    }
+    .fa-circle-xmark{
+        color: red;
+        font-size: 2rem;
+    }
+    .header_navbar_menu.active{
+        opacity: 1;
+        display: flex;
+        position: absolute;
+        top: 0;
+        transform: translateY(9dvh);
+        animation: fadeBottom 400ms  ease;
+        left: 0;
+        align-items: center;
+        flex-direction: column;
+        width: var(--website-responsive-size);
+        height: fit-content;
+        padding: 20px;
+        border: 2px rgba(255, 255, 255, 0.56) solid;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+    }
+}
+@media(max-width:660px){
+    :root{
+        --website-responsive-size:400px;
+    }
+    .dnk__design{
+        display: none;
+    }
+}
+@media (max-width:400px){
+    :root{
+        --website-responsive-size:300px;
+    }
+}
+@media (max-width:350px){
+    :root{
+        --website-responsive-size:260px;
+    }
 }
