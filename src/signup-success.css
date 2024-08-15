@@ -111,6 +111,45 @@ main{
 }
 .main-container_success-box h1{
     font-size: 1.5rem;
+    text-align: center;
     font-weight: 600;
     color: #0d6efd;
+}
+
+/* !Responsive design */
+@media(max-width:780px){
+    .main-container{
+        padding-inline: 60px;
+    }
+
+}
+@media(max-width:576px){
+    .main-container{
+        padding-inline: 40px;
+    }
+    .main-footer a{
+        font-size: 0.8rem;
+    }
+    .main-container_success-box h1{
+        font-size: 1rem;
+    }
+}
+@media(max-width:400px){
+    .main-container{
+        padding-inline: 30px;
+    }
+    .main-container_success-box h1{
+        font-size: 0.8rem;
+    }
+    .main-footer a{
+        font-size: 0.8rem;
+    }
+}
+@media(max-width:350px){
+    .main-container{
+        padding-inline: 10px;
+    }
+    .main-footer a{
+        font-size: 0.7rem;
+    }
 }
