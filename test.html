@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Symptom Severity Selector</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #e7f0ff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .symptomsSelect {
+                min-height: 54px;
+                padding: 16px;
+                cursor: pointer;
+                color: #0d6efd;
+                border: 1px solid #0d6efd;
+                border-radius: 0.5rem;
+                outline: none;
+                /* -webkit-appearance: none;
+    -moz-appearance: none; */
+            }
+
+            /* .symptom-select:after{
+    content:url();
+} */
+
+            .container {
+                width: 400px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 15px;
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .selected-items {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .selected-item {
+                background-color: #e2e9ff;
+                border: 1px solid #3575f1;
+                padding: 10px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .selected-item span {
+                color: #3575f1;
+            }
+
+            .severity-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .circles {
+                display: flex;
+                gap: 5px;
+            }
+
+            .circle {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: #ccc;
+                cursor: pointer;
+            }
+
+            .circle.active {
+                background-color: #3575f1;
+            }
+
+            .select-container {
+                position: relative;
+                margin-bottom: 20px;
+            }
+
+            select {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: #fff;
+                font-size: 16px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                background-color: #3575f1;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="selected-items" id="selectedItems"></div>
+            <div class="select-container">
+                <select id="symptomsSelect">
+                    <option value="" disabled selected>
+                        Simptomları seçin
+                    </option>
+                    <option value="Asqıraq">Asqıraq</option>
+                    <option value="Ani nəfəs darlığı">Ani nəfəs darlığı</option>
+                    <option value="Burun tutulması">Burun tutulması</option>
+                    <option value="Burun axması">Burun axması</option>
+                    <option value="Boğaz ağrısı">Boğaz ağrısı</option>
+                    <option value="Baş ağrısı">Baş ağrısı</option>
+                    <option value="Ağ bəlgəmli öskürək">
+                        Ağ bəlgəmli öskürək
+                    </option>
+                </select>
+            </div>
+            <button class="btn">İrəli</button>
+        </div>
+
+        <script></script>
+    </body>
+</html>

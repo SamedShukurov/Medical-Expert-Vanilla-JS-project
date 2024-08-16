@@ -33,7 +33,7 @@
             rel="stylesheet"
             href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
         />
-        <link rel="icon" type="image/svg" href="src/assets/svg/logo.svg"/>
+        <link rel="icon" type="image/svg" href="src/assets/svg/logo.svg" />
         <link rel="stylesheet" href="src/symptom-review.css" />
 
         <title>Medical expert</title>
@@ -42,21 +42,31 @@
         <main>
             <form class="main-container white_box">
                 <a href="index.html" class="previos-btn">
-                    <img src="src/assets/svg/right-arrow-icon.svg" alt="left">
+                    <img src="src/assets/svg/right-arrow-icon.svg" alt="left" />
                     Geri
                 </a>
                 <h3>
                     Diaqnozu öyrənmək üçün xəstəlik simptolarınızı daxil edin
                 </h3>
-                <select class="symptom-select">
-                    <option>Asqıraq</option>
-                    <option>Burun tutulması</option>
-                    <option>Burun axması</option>
-                    <option>Boğaz ağrısı</option>
-                    <option>Baş ağrısı</option>
-                    <option>Ağ bəlğəmli öskürək</option>
-                    <option>Nəfəs darlığı</option>
-                </select>
+                <div class="selected-items" id="selectedItems"></div>
+                <div class="select-container">
+                    <select id="symptomsSelect">
+                        <option value="" disabled selected>
+                            Simptomları seçin
+                        </option>
+                        <option value="Asqıraq">Asqıraq</option>
+                        <option value="Ani nəfəs darlığı">
+                            Ani nəfəs darlığı
+                        </option>
+                        <option value="Burun tutulması">Burun tutulması</option>
+                        <option value="Burun axması">Burun axması</option>
+                        <option value="Boğaz ağrısı">Boğaz ağrısı</option>
+                        <option value="Baş ağrısı">Baş ağrısı</option>
+                        <option value="Ağ bəlgəmli öskürək">
+                            Ağ bəlgəmli öskürək
+                        </option>
+                    </select>
+                </div>
                 <div class="form-group-btns">
                     <a href="signup-pass.html" class="btn_primary">İrəli</a>
                 </div>
@@ -68,22 +78,76 @@
             </ul>
         </main>
         <script>
-            const checkBox=document.querySelector('.form-group-pass-change_checkbox')
-            const eyeBtn = document.querySelector(".fa-eye-slash")
-            const inputBox = document.querySelector(".form-group_input-box > input")
-            checkBox.addEventListener('click',()=>{
-                checkBox.classList.toggle("active")
-            })
-            eyeBtn.addEventListener("click",()=>{
-                if(eyeBtn.classList.contains("fa-eye-slash")){
-                    inputBox.type = "text"
-                    eyeBtn.classList.replace("fa-eye-slash","fa-eye")
+
+            // Added
+            const symptomsSelect = document.getElementById("symptomsSelect");
+            const selectedItemsContainer =
+                document.getElementById("selectedItems");
+
+            const numOfCircles = 10; // Number of circles for severity rating
+
+            symptomsSelect.addEventListener("change", function () {
+                const selectedValue = this.value;
+
+                // Check if the symptom is already selected
+                const alreadySelected = Array.from(
+                    selectedItemsContainer.children
+                ).some((item) => item.dataset.value === selectedValue);
+                if (!alreadySelected) {
+                    addSelectedItem(selectedValue);
                 }
-                else{
-                    inputBox.type = "password"
-                    eyeBtn.classList.replace("fa-eye","fa-eye-slash")
+
+                // Reset the select dropdown to default
+                this.value = "";
+            });
+
+            function addSelectedItem(value) {
+                const selectedItem = document.createElement("div");
+                selectedItem.className = "selected-item";
+                selectedItem.dataset.value = value;
+
+                const itemText = document.createElement("span");
+                itemText.textContent = value;
+
+                const closeBtn = document.createElement("span");
+                closeBtn.textContent = "✖";
+                closeBtn.style.cursor = "pointer";
+                closeBtn.addEventListener("click", () => {
+                    selectedItemsContainer.removeChild(selectedItem);
+                });
+
+                const severityContainer = document.createElement("div");
+                severityContainer.className = "severity-container";
+
+                const circlesContainer = document.createElement("div");
+                circlesContainer.className = "circles";
+                severityContainer.appendChild(circlesContainer);
+
+                for (let i = 1; i <= numOfCircles; i++) {
+                    const circle = document.createElement("div");
+                    circle.className = "circle";
+                    circle.addEventListener("click", () => {
+                        setSeverity(i, circlesContainer);
+                    });
+                    circlesContainer.appendChild(circle);
                 }
-            })
+
+                selectedItem.appendChild(itemText);
+                selectedItem.appendChild(severityContainer);
+                selectedItem.appendChild(closeBtn);
+                selectedItemsContainer.appendChild(selectedItem);
+            }
+
+            function setSeverity(severity, circlesContainer) {
+                const circles = circlesContainer.children;
+                for (let i = 0; i < circles.length; i++) {
+                    if (i < severity) {
+                        circles[i].classList.add("active");
+                    } else {
+                        circles[i].classList.remove("active");
+                    }
+                }
+            }
         </script>
     </body>
 </html>

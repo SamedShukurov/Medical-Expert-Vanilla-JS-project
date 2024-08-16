@@ -11,6 +11,10 @@
     font-weight: 400;
     font-style: normal;
 }
+.fa-circle-xmark{
+    display: none;
+}
+
 body {
     background: #e1e9fb;
     min-height: 100dvh;

@@ -17,6 +17,10 @@
     
 
 }
+.fa-circle-xmark{
+    display: none;
+}
+
 img{
     display: block;
     width: 100%;
