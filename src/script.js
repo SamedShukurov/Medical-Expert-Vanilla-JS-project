@@ -49,3 +49,9 @@ burgerMenuCloseBtn.addEventListener("click",()=>{
     }
 })
 
+const rezervationBtn = document.querySelectorAll(".btn_outline")
+rezervationBtn.forEach(btn=>{
+    btn.addEventListener("click",()=>{
+    window.location.replace("doctor-rezervation.html")
+})
+})

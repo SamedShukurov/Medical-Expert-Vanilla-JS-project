@@ -718,6 +718,7 @@ footer > span{
         opacity: 0;
     }
     .fa-circle-xmark{
+        display: block;
         color: red;
         font-size: 2rem;
     }

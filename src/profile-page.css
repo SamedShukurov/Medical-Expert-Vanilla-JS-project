@@ -11,8 +11,41 @@
     font-weight: 400;
     font-style: normal;
 }
-body{
-    background: #E1E9FB;
+.fa-circle-xmark{
+    display: none;
+}
+
+body {
+    background: linear-gradient(120deg, rgba(82,162,255,1) 0%, rgba(188,236,252,1) 56%, rgba(209,135,255,1) 100%);
+    min-height: 100dvh;
+}
+:root{
+    --website-responsive-size:1200px;
+    
+
+}
+.header-profile{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.header_navbar div{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+}
+img{
+    display: block;
+    width: 100%;
+}
+main,header,.footer-content{
+    max-width: var(--website-responsive-size);
+    margin: 0 auto;
+}
+.footer-content{
+    
+    gap: 20px;
 }
 /*! Header */
 header {
@@ -29,27 +62,9 @@ header {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
         rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.header_navbar div{
-    display: flex;
-    gap: 20px;
-    align-items: center;
 
-}
-img{
-    display: block;
-    width: 100%;
-}
 header * {
     color: #1d1d1f;
-}
-:root{
-    --website-responsive-size:1200px;
-    
-
-}
-main,header{
-    max-width: var(--website-responsive-size);
-    margin: 0 auto;
 }
 .header_navbar {
     width: 80%;
@@ -103,6 +118,7 @@ main,header{
     display: none;
     font-size: 2rem;
 }
+
 /*! Footer */
 footer{
     min-height: 40dvh;
@@ -186,8 +202,8 @@ footer > span{
     font-size: 1rem;
     justify-content: center;
     border-left:1px solid #0D6EFD;
-}
 
+}
 .footer-content div div input::placeholder{
     color: #828080;
 }
@@ -195,17 +211,7 @@ footer > span{
     border-radius: 10px;
     border: none;
 }
-/*! Blog */
-.fa-circle-xmark{
-    display: none;
-}
-#blog{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    padding: 120px 0;
-}
+
 .btn_primary {
     width: fit-content;
     background: #0d6efd;
@@ -248,131 +254,123 @@ footer > span{
     border-radius: 10px;
     background: #0d6efd;
 }
-main{
+
+main {
+    padding: 120px 0;
     margin: 0 auto;
-}
-
-.blog_diseases{
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: space-between;
-    grid-auto-flow: row;
-
-}
-.blog_diseases img{
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    pointer-events: none;
-    width: 100%;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-    -webkit-user-drag: none;
-    user-select: none;
-    -ms-user-select: none;
-}
-.blog_diseases_box{
-    width: fit-content;
-    border: none;
-    cursor: pointer;
-}
-.blog_diseases_box_description{
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    min-height: 80dvh;
 
 }
-.blog_diseases_box_description p{
-    font-size: 1rem;
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
 }
-.blog_diseases_box_description h1{
-    font-weight: 500;
+.info-card{
+    min-width:540px ;
+    min-height: 328px;
+    background: #E7F1FB;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     font-size: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    color: #0D6EFD;
+    cursor: pointer;
+}
+.info-card p{
+    font-weight: 600;
 }
 
-/*  */
-.designed_oval {
-    background: linear-gradient(45deg, #6ebdf9 100%, #bcecfc 56%);
-    filter: blur(200px);
-    top: 770px;
-    width: 100%;
-    border: none;
-    bottom: 0;
-    left: -300px;
-    right: 0;
-    margin: auto;
-    position: absolute;
-    z-index: -1;
-}
-.dnk__design {
-    position: absolute;
-    height: 400px;
-    right: 0;
-    top: 0;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    pointer-events: none;
-    /* user-drag: none; */
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    z-index: -2;
+.info-card>img{
+    width: 20px;
+    aspect-ratio: 1;
 }
 
-.dnk__design img {
-    height: 2000px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    z-index: -1;
-}
-.designed_oval-2{
-    background: linear-gradient( -45deg,#D187FF, #BCECFC8F);
-    filter: blur(100px);
-    width: 100%;
-    border: none;
-    position: absolute;
-    z-index: -2;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    pointer-events: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -ms-user-select: none;
-    bottom:0;
-    transform: translateY(calc(100dvh + 200px));
-    height: 80dvh;
-    overflow: hidden;
-}
+
+
 .white_box {
     border: 2px rgba(255, 255, 255, 0.56) solid;
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 16px;
     backdrop-filter: blur(10px);
 }
-.wave-design{
-    position: absolute;
+
+.search-container {
     width: 100%;
-    overflow: hidden;
-    left: 0;
-    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 54px;
+}
+.search-box {
+    display: flex;
+    width: 75%;
+    position: relative;
+}
+.search-box i {
+    position: absolute;
     top: 0;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    pointer-events: none;
-    /* user-drag: none; */
-    -webkit-user-drag: none;
-    -ms-user-select: none;
-    transform: translateY(calc(100dvh + 200px));
-    z-index: -1;
+    height: fit-content;
+    width: fit-content;
+    left: 15px;
+    bottom: 0;
     margin: auto;
+    color: #000;
+}
+.filter-box {
+    display: flex;
+    width: 22%;
+    position: relative;
+}
+.search-box input,
+.filter-box select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    padding-left: 38px;
+    border: 1px solid #0d6efd;
+    outline: none;
+    background: none;
+}
+.search-box input::placeholder,
+.filter-box input::placeholder {
+    color: #000;
+}
+
+.filter-box i {
+    position: absolute;
+    top: 0;
+    height: fit-content;
+    width: fit-content;
+    left: 15px;
+    bottom: 0;
+    margin: auto;
+    color: #000;
+}
+/* apply CSS to the select tag of  
+         .dropdown-container div*/
+
+.filter-box select {
+    -moz-appearance: none;
+
+    -webkit-appearance: none;
+}
+
+/* for IE10 */
+.filter-box select::-ms-expand {
+    display: none;
 }
 
 
@@ -381,6 +379,18 @@ main{
         --website-responsive-size:900px;
         
     
+    }
+}
+@media (max-width:800px){
+    .doctors_people{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .person{
+        
+        margin: 0 5px;
     }
 }
 @media (max-width:500px){
@@ -394,6 +404,9 @@ main{
     footer{
         margin-top: 100px;
         padding: 10px;
+    }
+    main{
+        margin-top: 100px;
     }
     .main_about_article h1{
         font-size: 1.25rem;
@@ -420,12 +433,6 @@ main{
             opacity: 1;
             transform: translateY(9dvh);
         }
-    }
-    .blog_diseases{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
     }
     footer{
         padding: 50px 0;

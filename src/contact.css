@@ -486,6 +486,7 @@ main > h1{
     }
     .fa-circle-xmark{
         color: red;
+        display: block;
         font-size: 2rem;
     }
     .header_navbar_menu.active{
