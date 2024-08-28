@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url(
+    header.css
+);
 /*! Resetter */
 * {
     margin: 0;
@@ -16,9 +19,6 @@
     --website-responsive-size:1200px;
     
 
-}
-.fa-circle-xmark{
-    display: none;
 }
 
 img{
@@ -42,87 +42,11 @@ body {
     align-items: center;
     margin-top: 40px;
 }
-main,header{
+main{
     max-width: var(--website-responsive-size);
     margin: 0 auto;
 }
-/** Header */
-header {
-    height: 8dvh;
-    background: rgba(253, 253, 253, 0.9);
-    border: none;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    border-radius: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
 
-header * {
-    color: #1d1d1f;
-}
-.header_navbar {
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.header_navbar_menu {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-/* animasiya */
-.header_navbar div{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-
-}
-.header_navbar_menu a {
-    transition: all 0.3s ease-in-out;
-    position: relative;
-}
-.header_navbar_menu a:hover {
-    opacity: 0.9;
-    color: #0d6efd;
-}
-.header_navbar_menu a.active {
-    color: #0d6efd;
-}
-.header_navbar_menu a:hover::after {
-    width: 100%;
-}
-.header_navbar_menu a::after {
-    transition: all 0.3s ease-in-out;
-    content: "";
-    height: 3px;
-    position: absolute;
-    width: 0;
-    background-color: #0d6efd;
-    bottom: -4px;
-    left: 0;
-}
-
-.header_navbar_login_btn {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    width: max-content;
-    cursor: pointer;
-}
-.fa-bars{
-    color:black; 
-    cursor: pointer;
-    display: none;
-    font-size: 2rem;
-}
 
 /** Main  */
 main {

@@ -1,0 +1,134 @@
+/*! Header */
+header {
+    height: 8dvh;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background: rgba(253, 253, 253, 0.9);
+    border: none;
+    border-radius: 20px;
+    position: sticky;
+    max-width: var(--website-responsive-size);
+    margin: 0 auto;
+    top: 0;
+    z-index: 10;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.header_navbar div{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+}
+.fa-circle-xmark{
+    display: none;
+}
+img{
+    display: block;
+    width: 100%;
+}
+header * {
+    color: #1d1d1f;
+}
+.header_navbar {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_navbar_menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+/* animasiya */
+.header_navbar_menu a {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+.header_navbar_menu a:hover {
+    opacity: 0.9;
+    color: #0d6efd;
+}
+.header_navbar_menu a.active {
+    color: #0d6efd;
+}
+.header_navbar_menu a:hover::after {
+    width: 100%;
+}
+.header_navbar_menu a::after {
+    transition: all 0.3s ease-in-out;
+    content: "";
+    height: 3px;
+    position: absolute;
+    width: 0;
+    background-color: #0d6efd;
+    bottom: -4px;
+    left: 0;
+}
+
+.header_navbar_login_btn {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: max-content;
+    cursor: pointer;
+}
+.fa-bars{
+    color:black; 
+    cursor: pointer;
+    display: none;
+    font-size: 2rem;
+}
+
+
+
+@media (min-width:936px){
+    .fa-bars{
+        display: none;
+    }
+}
+
+@media (max-width:500px){
+    header{
+        padding: 0 5px;
+    }
+}
+
+
+@media (max-width:935px){
+    .fa-bars{
+        display: block;
+    }
+    .header_navbar_menu{
+        display: none;
+        transition: all 1s ease;
+        opacity: 0;
+    }
+    .fa-circle-xmark{
+        color: red;
+        display: block;
+        font-size: 2rem;
+    }
+    .header_navbar_menu.active{
+        opacity: 1;
+        display: flex;
+        position: absolute;
+        top: 0;
+        transform: translateY(9dvh);
+        animation: fadeBottom 400ms  ease;
+        left: 0;
+        align-items: center;
+        flex-direction: column;
+        width: var(--website-responsive-size);
+        height: fit-content;
+        padding: 20px;
+        border: 2px rgba(255, 255, 255, 0.56) solid;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+    }
+}
