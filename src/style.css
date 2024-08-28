@@ -743,7 +743,7 @@ footer > span{
 
 }@media(max-width:660px){
     :root{
-        --website-responsive-size:400px;
+        --website-responsive-size:90%;
     }
     
     .testi__content__slide p{
