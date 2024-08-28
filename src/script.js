@@ -1,19 +1,16 @@
 const faqs = document.querySelectorAll(".faq-content-questions .accordion");
 
-
-
-faqs.forEach(faq=>{
-    faq.addEventListener("click",()=>{
-        faq.classList.toggle("active")
-        const icon = faq.firstElementChild.lastElementChild
-        if(faq.classList.contains("active")){
-            icon.classList.replace('fa-plus','fa-minus')
+faqs.forEach((faq) => {
+    faq.addEventListener("click", () => {
+        faq.classList.toggle("active");
+        const icon = faq.firstElementChild.lastElementChild;
+        if (faq.classList.contains("active")) {
+            icon.classList.replace("fa-plus", "fa-minus");
+        } else {
+            icon.classList.replace("fa-minus", "fa-plus");
         }
-        else{
-            icon.classList.replace('fa-minus','fa-plus')
-        }
-    })
-})
+    });
+});
 
 // swiper
 AOS.init();
@@ -32,26 +29,20 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 // Burger menu
-const burgerMenu = document.querySelector(".fa-bars")
-const burgerMenuCloseBtn = document.querySelector(".fa-circle-xmark")
-const navigationMenu=document.querySelector(".header_navbar_menu")
-burgerMenu.addEventListener("click",()=>{
-    if(!navigationMenu.classList.contains("active")){
-        
-        navigationMenu.classList.add("active")
-        burgerMenu.style.display="none"
+const burgerMenu = document.querySelector(".fa-bars");
+const burgerMenuCloseBtn = document.querySelector(".fa-circle-xmark");
+const navigationMenu = document.querySelector(".header_navbar_menu");
+burgerMenu.addEventListener("click", () => {
+    if (!navigationMenu.classList.contains("active")) {
+        navigationMenu.classList.add("active");
+        burgerMenu.style.display = "none";
     }
-})
-burgerMenuCloseBtn.addEventListener("click",()=>{
-    if(navigationMenu.classList.contains("active")){
-        navigationMenu.classList.remove("active")
-        burgerMenu.style.display="block"
+});
+burgerMenuCloseBtn.addEventListener("click", () => {
+    if (navigationMenu.classList.contains("active")) {
+        navigationMenu.classList.remove("active");
+        burgerMenu.style.display = "block";
     }
-})
+});
 
-const rezervationBtn = document.querySelectorAll(".btn_outline")
-rezervationBtn.forEach(btn=>{
-    btn.addEventListener("click",()=>{
-    window.location.replace("doctor-rezervation.html")
-})
-})
+

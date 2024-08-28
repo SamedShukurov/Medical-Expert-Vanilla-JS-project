@@ -28,11 +28,17 @@
             rel="stylesheet"
             href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
         />
-        <link rel="icon" type="image/svg" href="src/assets/svg/logo.svg"/>
+        <link rel="icon" type="image/svg" href="src/assets/svg/logo.svg" />
         <link
             rel="stylesheet"
             href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
         />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+        />
+
         <link rel="stylesheet" href="src/login.css" />
 
         <title>Medical expert</title>
@@ -66,7 +72,9 @@
                 </div>
                 <div class="form-group-btns">
                     <a class="btn_primary" href="profile-page.html">Daxil ol</a>
-                    <a href="signup.html" class="btn_outline">Qeydiyyatdan keç</a>
+                    <a href="signup.html" class="btn_outline"
+                        >Qeydiyyatdan keç</a
+                    >
                 </div>
             </form>
             <ul class="main-footer">
@@ -75,23 +83,11 @@
                 <li><a href="index.html#faq"> Tez-tez verilən suallar </a></li>
             </ul>
         </main>
-        <script>
-            const checkBox=document.querySelector('.form-group-pass-change_checkbox')
-            const eyeBtn = document.querySelector(".fa-eye-slash")
-            const inputBox = document.querySelector(".form-group_input-box > input")
-            checkBox.addEventListener('click',()=>{
-                checkBox.classList.toggle("active")
-            })
-            eyeBtn.addEventListener("click",()=>{
-                if(eyeBtn.classList.contains("fa-eye-slash")){
-                    inputBox.type = "text"
-                    eyeBtn.classList.replace("fa-eye-slash","fa-eye")
-                }
-                else{
-                    inputBox.type = "password"
-                    eyeBtn.classList.replace("fa-eye","fa-eye-slash")
-                }
-            })
-        </script>
+
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/toastify-js"
+        ></script>
+        <script src="./src/login.js"></script>
     </body>
 </html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- !Font Awasome -->
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
+        />
+        <link rel="icon" type="image/svg" href="src/assets/svg/logo.svg" />
+        <link
+            rel="stylesheet"
+            href="src/manual-instrumental-analysis-result-page.css"
+        />
+
+        <title>Medical expert</title>
+    </head>
+    <body>
+        <main>
+            <form class="main-container white_box">
+                <a href="index.html" class="previos-btn">
+                    <img src="src/assets/svg/right-arrow-icon.svg" alt="left" />
+                    Geri
+                </a>
+                <h3>Manual (aparatsız) analiz nəticələrini daxil edin</h3>
+                <div class="form-group">
+                    <input type="file" id="file-input" multiple />
+                    <div>
+                        <img src="src/assets/svg/cloud-upload-icon.svg" />
+                        <p>
+                            Yükləmək üçün faylı bu sahəyə çəkin və ya yuxarıdakı
+                            simgəyə klikləyin
+                        </p>
+                    </div>
+                </div>
+                <ul id="files-list"></ul>
+                <div class="form-group-btns">
+                    <a href="#" class="btn_primary">İrəli</a>
+                </div>
+            </form>
+            <ul class="main-footer">
+                <li><a href="contact.html"> Əlaqə </a></li>
+                <li><a href="#"> Şərtlər və qaydalar </a></li>
+                <li><a href="index.html#faq"> Tez-tez verilən suallar </a></li>
+            </ul>
+        </main>
+        <script>
+            let fileInput = document.getElementById("file-input");
+            let fileList = document.getElementById("files-list");
+
+            fileInput.addEventListener("change", () => {
+                fileList.innerHTML = "";
+                for (i of fileInput.files) {
+                    console.log(i);
+                    let reader = new FileReader();
+                    let listItem = document.createElement("li");
+                    let fileName = i.name;
+                    let fileSize = (i.size / 1024).toFixed(1);
+                    listItem.innerHTML = `
+                        <div>
+                            <p>${fileName}</p>
+                            <p>${fileSize}KB</p>
+                        </div>
+                    
+                    `;
+                    if (fileSize >= 1024) {
+                        fileSize = (fileSize / 1024).toFixed(1);
+                        listItem.innerHTML = `
+                        <div>
+                            <img src="${fileName}"/>
+                            <p>${fileName}</p>
+                            <p>${fileSize}MB</p>
+                        </div>
+                    
+                    `;
+                    }
+                    fileList.appendChild(listItem);
+                }
+            });
+        </script>
+    </body>
+</html>
