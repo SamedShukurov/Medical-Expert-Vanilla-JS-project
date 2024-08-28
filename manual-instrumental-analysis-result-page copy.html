@@ -52,9 +52,7 @@
                 <div class="form-group">
                     <input type="file" id="file-input" multiple />
                     <div>
-                        <img
-                            src="src/assets/svg/cloud-upload-icon.svg"
-                        />
+                        <img src="src/assets/svg/cloud-upload-icon.svg" />
                         <p>
                             Yükləmək üçün faylı bu sahəyə çəkin və ya yuxarıdakı
                             simgəyə klikləyin
@@ -76,34 +74,63 @@
             let fileInput = document.getElementById("file-input");
             let fileList = document.getElementById("files-list");
 
-            fileInput.addEventListener("change", () => {
-                fileList.innerHTML = "";
-                for (i of fileInput.files) {
-                    // console.log(i)
-                    let reader = new FileReader();
-                    let listItem = document.createElement("li");
-                    let fileName = i.name;
-                    let fileSize = (i.size / 1024).toFixed(1);
-                    listItem.innerHTML = `
-                        <div>
-                            <p>${fileName}</p>
-                            <p>${fileSize}KB</p>
-                        </div>
-                    
-                    `;
-                    if(fileSize>=1024){
-                        fileSize = (fileSize/1024).toFixed(1)
-                        listItem.innerHTML = `
-                        <div>
-                            <p>${fileName}</p>
-                            <p>${fileSize}MB</p>
-                        </div>
-                    
-                    `;
+            function previewFiles() {
+                const preview = document.querySelector("#files-list");
+                const files = fileInput.files;
+                console.log(files)
+                function readAndPreview(file) {
+                    // Make sure `file.name` matches our extensions criteria
+                    if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                        const reader = new FileReader();
+
+                        reader.addEventListener(
+                            "load",
+                            () => {
+                                let listItem = document.createElement("li");
+                                // reader.result
+                                // const image = new Image();
+                                // image.height = 100;
+                                // image.title = file.name;
+                                // image.src = reader.result;
+
+                                let fileName = file.name;
+                                let fileSize = (file.size / 1024).toFixed(1);
+                                listItem.innerHTML = `
+
+
+                                        <div>
+                                            <img src="${reader.result}"/>
+                                            <p>${fileName}</p>
+                                        </div>
+                                        <i class="fa-solid fa-trash" style="color:#DC3545;" onclick="removeItem(this)"></i>
+                                `;
+
+                                if (fileSize >= 1024) {
+                                    fileSize = (fileSize / 1024).toFixed(1);
+                                    listItem.innerHTML = `
+                                        <img src="${reader.result}"/>
+                                        <p>${fileName}</p>
+                                        <p>${fileSize}MB</p>
+
+                                `;
+                                }
+                                preview.appendChild(listItem);
+                            },
+                            false
+                        );  
+                        reader.readAsDataURL(file);
                     }
-                    fileList.appendChild(listItem);
                 }
-                })
+
+                if (files) {
+                    Array.prototype.forEach.call(files, readAndPreview);
+                }
+            }
+
+            fileInput.addEventListener("change", previewFiles);
+            function removeItem(item){
+                item.parentElement.remove()
+            }
         </script>
     </body>
 </html>
