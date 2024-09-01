@@ -471,6 +471,9 @@ main {
     :root {
         --website-responsive-size: 900px;
     }
+    .container{
+        padding: 80px 30px;
+    }
 }
 @media (max-width: 800px) {
     .doctors_people {
@@ -585,18 +588,70 @@ main {
         border-radius: 16px;
         backdrop-filter: blur(10px);
     }
+    .diaqnoz-card{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .diaqnoz-card-upload{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .search-container{
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .search-box{
+        width: 100%;
+    }
+    .filter-box{    
+        position: absolute;
+        width: 150px;
+        right: 0;
+        top: 60px;
+    }
 }
 @media (max-width: 660px) {
+
     :root {
         --website-responsive-size: 400px;
     }
     .dnk__design {
         display: none;
     }
+    .container >p,.container >p a{
+        font-size: 0.8rem;
+    }
+    .diaqnoz-card li :is(p,span){
+        font-size: 0.8rem;
+    }
+    .diaqnoz-card{
+        padding: 10px;
+    }
+    .container{
+        padding: 80px 20px;
+    }
 }
 @media (max-width: 400px) {
     :root {
         --website-responsive-size: 300px;
+    }
+    .container >p,.container >p a{
+        font-size: 0.6rem;
+    }
+    .filter-box select::placeholder{
+        font-size: 0.6rem;
+    }
+    .diaqnoz-card li {
+        flex-direction: column;
+        align-items: center;
+    }
+    .diaqnoz-card li span{
+        width: 100%;
+        text-align: center;
+    }
+    .diaqnoz-card li span a{
+        font-size: 0.8rem;
     }
 }
 @media (max-width: 350px) {

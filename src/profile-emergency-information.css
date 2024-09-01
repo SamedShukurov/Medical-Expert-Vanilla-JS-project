@@ -308,7 +308,6 @@ main {
     cursor: pointer;
     width: 100%;
     border: #0d6efd 1px solid;
-    padding: 18px 28px;
     border-radius: 20px;
     transition: all 0.35s ease;
 }
@@ -320,6 +319,9 @@ main {
     gap: 20px;
     color:black;
     width: 100%;
+    border-radius: 20px;
+    border: none;
+    padding: 18px 28px;
 }
 .container ul li:hover a{
     color: white;
@@ -526,14 +528,32 @@ main {
     .dnk__design {
         display: none;
     }
+    .container{
+        padding: 50px;
+    }
+    .container h1{
+        margin-top: 20px;
+    }
+    main{
+        min-height: 50dvh;
+    }
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     :root {
         --website-responsive-size: 300px;
     }
+    .container{
+        padding: 30px;
+    }
+    .container p,.container >p a{
+        font-size: 0.7rem;
+    }
+    .container h1{
+        margin-top: 30px;
+    }
 }
-@media (max-width: 350px) {
+/* @media (max-width: 350px) {
     :root {
         --website-responsive-size: 260px;
     }
-}
+} */

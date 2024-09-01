@@ -378,7 +378,9 @@ main {
     :root{
         --website-responsive-size:900px;
         
-    
+    }
+    .info-card{
+        min-width: 440px;
     }
 }
 @media (max-width:800px){
@@ -392,6 +394,7 @@ main {
         
         margin: 0 5px;
     }
+
 }
 @media (max-width:500px){
 
@@ -496,6 +499,13 @@ main {
         border-radius: 16px;
         backdrop-filter: blur(10px);
     }
+    .info-card{
+        min-width: 270px;
+        min-height:200px;
+    }
+    main{
+        min-height: 50dvh;
+    }
 }
 @media(max-width:660px){
     :root{
@@ -504,14 +514,32 @@ main {
     .dnk__design{
         display: none;
     }
+    .info-card{
+        min-width: 400px;
+        min-height:200px;
+    }
+    main{
+        min-height: 50dvh;
+    }
+    .container{
+        flex-direction: column;
+        gap: 20px;
+    }
 }
-@media (max-width:400px){
+@media (max-width:420px){
     :root{
         --website-responsive-size:300px;
+    }
+    .info-card{
+        min-width: 300px;
     }
 }
 @media (max-width:350px){
     :root{
         --website-responsive-size:260px;
+    }
+    .info-card{
+        min-width: 260px;
+        min-height:170px;
     }
 }
