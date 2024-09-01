@@ -39,6 +39,11 @@ header * {
     justify-content: space-between;
     align-items: center;
 }
+.header-profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .header_navbar_menu {
     display: flex;
     align-items: center;

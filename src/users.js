@@ -1,64 +1,18 @@
-const faqs = document.querySelectorAll(".faq-content-questions .accordion");
+let headerLoginBtn = document.querySelector(".header_navbar > div");
+console.log(headerLoginBtn)
+if (localStorage.getItem("isLogged") == "true") {
+    headerLoginBtn.innerHTML = `
 
-faqs.forEach((faq) => {
-    faq.addEventListener("click", () => {
-        faq.classList.toggle("active");
-        const icon = faq.firstElementChild.lastElementChild;
-        if (faq.classList.contains("active")) {
-            icon.classList.replace("fa-plus", "fa-minus");
-        } else {
-            icon.classList.replace("fa-minus", "fa-plus");
-        }
-    });
-});
-
-// swiper
-AOS.init();
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next-custom",
-        prevEl: ".swiper-button-prev-custom",
-    },
-});
-
-// Burger menu
-const burgerMenu = document.querySelector(".fa-bars");
-const burgerMenuCloseBtn = document.querySelector(".fa-circle-xmark");
-const navigationMenu = document.querySelector(".header_navbar_menu");
-burgerMenu.addEventListener("click", () => {
-    if (!navigationMenu.classList.contains("active")) {
-        navigationMenu.classList.add("active");
-        burgerMenu.style.display = "none";
-    }
-});
-burgerMenuCloseBtn.addEventListener("click", () => {
-    if (navigationMenu.classList.contains("active")) {
-        navigationMenu.classList.remove("active");
-        burgerMenu.style.display = "block";
-    }
-});
-
-/**
- 
-    //! Profile 
-    <div>
         <i class="fa-solid fa-bars"></i>
         <a class="header-profile" href="profile-page.html">
             <img src="src/assets/svg/Eli pp.svg" alt="pp">
             <span>Əli</span>
-        </a>
-    </div>
- */
+        </a>    
+    `;
+} else {
 
-/*  //!Guest
-    <div>
+
+    headerLoginBtn.innerHTML = `
         <i class="fa-solid fa-bars"></i>
         <a href="login.html" class="header_navbar_login_btn">
             <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,6 +28,6 @@ burgerMenuCloseBtn.addEventListener("click", () => {
             </svg>
             <span>Daxil ol</span>
         </a>
-    </div>
-
-*/
+    
+    `
+}

@@ -1,0 +1,16 @@
+{
+    "users":[
+        {
+            "FIN":"",
+            "password":"",
+            "mail":""
+        }
+    ],
+    "doctors":[
+        {
+            "FIN":"",
+            "password":"doctor123",
+            "mail":""
+        }
+    ]
+}

@@ -13,4 +13,6 @@ eyeBtn.addEventListener("click", () => {
         eyeBtn.classList.replace("fa-eye", "fa-eye-slash");
     }
 });
-
+function checkUser(){
+    localStorage.setItem("isLogged","true")
+}
