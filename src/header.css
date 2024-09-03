@@ -137,3 +137,12 @@ header * {
         backdrop-filter: blur(10px);
     }
 }
+
+@media (max-width:400px){
+    .header_navbar div{
+        gap: 10px;
+    }
+    .header_navbar{
+        width: 90%;
+    }
+}

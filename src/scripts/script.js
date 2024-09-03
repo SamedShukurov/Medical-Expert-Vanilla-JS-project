@@ -45,6 +45,17 @@ burgerMenuCloseBtn.addEventListener("click", () => {
     }
 });
 
+let doctorRezervationBtns  = document.querySelectorAll(".btn_outline")
+doctorRezervationBtns.forEach(item => 
+    item.onclick = () => {
+        window.location.href = "doctor-rezervation.html"
+    }
+)
+
+let blogDiseasesDescriptions = document.querySelectorAll(".blog_diseases_box_description  a")
+blogDiseasesDescriptions.forEach(a=>{
+    a.href = "blog-review.html"
+})
 /**
  
     //! Profile 
