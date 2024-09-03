@@ -351,8 +351,11 @@ main {
     text-align: start;
     position: absolute;
     color:#DC3545;
+} 
+.container:has(b){
+    gap: 10px;
 }
-.container > div{
+.doctor-profile-description{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     width: 100%;
@@ -500,6 +503,31 @@ main {
         border-radius: 16px;
         backdrop-filter: blur(10px);
     }
+    .container-profile-card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-profile-card ul li{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-direction: column;
+    }
+    .information-card li span{
+        width: 60%;
+    }
+    .container > b {
+        width: 70%;
+        top: 20px;
+    }
+    .doctor-profile-description{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,1fr);
+    }
+
+    .full-info{
+        font-size: 0.8rem;
+    }
 }
 @media (max-width: 660px) {
     :root {
@@ -508,14 +536,49 @@ main {
     .dnk__design {
         display: none;
     }
+    .container{
+        padding:30px;
+        padding-top: 80px;
+    }
+    .information-card li{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        align-items: center;
+        gap: 5px;
+    }
+    .information-card li span{
+        width: fit-content;
+    }
 }
 @media (max-width: 400px) {
     :root {
         --website-responsive-size: 300px;
     }
+    .container >p,.container > p :is(span,a){
+        font-size: 0.8rem;
+    }
+    .information-card li{
+        font-size: 0.8rem;
+    }
+    .container-profile-card ul li{
+        font-size: 0.8rem;
+    }
+
+    .doctor-profile-description{
+        display: flex;
+        flex-direction: column;
+    }
+    .container:has(b){
+        padding-top: 100px;
+    }
+
 }
 @media (max-width: 350px) {
     :root {
         --website-responsive-size: 260px;
+    }
+    .container:has(b){
+        padding-top: 140px;
     }
 }

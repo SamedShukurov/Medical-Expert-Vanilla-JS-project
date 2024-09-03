@@ -1,3 +1,4 @@
+
 const checkBox = document.querySelector(".form-group-pass-change_checkbox");
 const eyeBtn = document.querySelector(".fa-eye-slash");
 const inputBox = document.querySelector(".form-group_input-box > input");
@@ -13,6 +14,10 @@ eyeBtn.addEventListener("click", () => {
         eyeBtn.classList.replace("fa-eye", "fa-eye-slash");
     }
 });
+
+
 function checkUser(){
-    localStorage.setItem("isLogged","true")
+    if(checkBox.classList.contains("active") == true){
+        localStorage.setItem("stayLogged","true")
+    }
 }

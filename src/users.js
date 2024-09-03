@@ -1,8 +1,8 @@
-let headerLoginBtn = document.querySelector(".header_navbar > div");
-console.log(headerLoginBtn)
-if (localStorage.getItem("isLogged") == "true") {
-    headerLoginBtn.innerHTML = `
 
+let headerLoginBtn = document.querySelector(".header_navbar > div");
+
+if (localStorage.getItem("stayLogged") == "true") {
+    headerLoginBtn.innerHTML = `
         <i class="fa-solid fa-bars"></i>
         <a class="header-profile" href="profile-page.html">
             <img src="src/assets/svg/Eli pp.svg" alt="pp">
@@ -10,8 +10,6 @@ if (localStorage.getItem("isLogged") == "true") {
         </a>    
     `;
 } else {
-
-
     headerLoginBtn.innerHTML = `
         <i class="fa-solid fa-bars"></i>
         <a href="login.html" class="header_navbar_login_btn">

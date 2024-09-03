@@ -429,6 +429,7 @@ main {
         border-radius: 16px;
         backdrop-filter: blur(10px);
     }
+
 }
 @media (max-width: 660px) {
     :root {
@@ -437,10 +438,35 @@ main {
     .dnk__design {
         display: none;
     }
+    .container{
+        padding: 30px;
+        padding-top:  80px;
+    }
+    .container  :is(span,a){
+        font-size: 0.7rem;
+    }
+    .container > p{
+        font-size: 0.7rem;
+    }
+    .container-card p{
+        font-size: 0.8rem;
+    }
 }
 @media (max-width: 400px) {
     :root {
         --website-responsive-size: 300px;
+    }
+    .container-card_btns{
+        flex-direction: column;
+    }
+    .container  :is(span,a){
+        font-size: 0.6rem;
+    }
+    .container > p{
+        font-size: 0.6rem;
+    }
+    .container-card p{
+        font-size: 0.7rem;
     }
 }
 @media (max-width: 350px) {
