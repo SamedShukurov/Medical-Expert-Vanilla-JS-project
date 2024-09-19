@@ -15,6 +15,21 @@ eyeBtn.addEventListener("click", () => {
     }
 });
 
+let usersDbUrl= 'http://localhost:3000/users'
+let doctorsDbUrl= 'http://localhost:3000/doctors'
+let finInput = document.querySelector("#FIN-input")
+let passInput = document.querySelector(".form-group_input-box")
+
+document.querySelector(".main-container").addEventListener('submit',(e)=>{
+    e.preventDefault()
+})  
+document.querySelector(".btn_primary").addEventListener("click",(e)=>{
+    e.preventDefault()
+    fetch(usersDbUrl).then(res => res.json()).then(data => {
+        console.log(data)
+    })
+})
+
 
 function checkUser(){
     if(checkBox.classList.contains("active") == true){

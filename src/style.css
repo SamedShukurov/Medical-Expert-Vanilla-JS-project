@@ -65,7 +65,7 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 30dvh;
-    width: 100%;
+    width: 70%;
     gap: 10px;
 }
 .main_about_article h1 {
@@ -621,6 +621,13 @@ footer > span{
         text-align: center;
         gap: 30px;
     }
+    .main_about_article h1{
+        font-size: 2.5rem;
+        width: 100%;
+    }
+    .main_about_article p{
+        font-size: 1rem;
+    }
     :root{
         --website-responsive-size:600px;
     }
@@ -673,13 +680,7 @@ footer > span{
     .testi__content__slide p{
         font-size: 1rem;
     }
-    .main_about_article h1{
-        font-size: 2.5rem;
-        width: 100%;
-    }
-    .main_about_article p{
-        font-size: 1rem;
-    }
+
     .doctors_people{
         display: flex;
         flex-direction: column;
